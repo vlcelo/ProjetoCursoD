@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+body {
+    font-family: 'Afacad Flux', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.header a {
+    color: white;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.header a:hover {
+    color: rgb(255, 115, 0);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header img {
+    max-width: 8rem;
+}
+
+.toggle-mode {
+    margin-left: 20px;
+}
+
+.footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.card-custom {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.dark-mode {
+    color: #fff;
+
+    .header {
+        background-color: #fff;
+        color: #1f1f1f;
+    }
+
+    .header a {
+        color: #1f1f1f;
+    }
+
+    .header a:hover {
+        color: rgb(255, 115, 0);
+        font-weight: 600;
+    }
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #1f1f1f;
+}
+
+/* Acessibilidade */
+.acessibilidade-menu {
+    position: fixed;
+    top: 6rem;
+    right: 0.4rem;
+    z-index: 1700;
+    margin-bottom: 1rem;
+    width: 10rem;
+}
+
+.btn-acessibilidade {
+    margin-left: 10px;
+}
+
+/* Centraliza logo e slogan */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+    justify-content:unset;
+    align-items: center;
+    height: 50vh;
+    text-align: center;
+}
+
+.main-container img {
+    max-width: 40rem;
+    margin-bottom: 20px;
+}
+
+.logo-container{
+    height: 30vh;
+}
+
+.slogan {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Seções de navegação */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #1f1f1f;
+    margin-top: 10rem;
+    justify-content:unset;
+    color: #1f1f1f;
+    height: 100%;
+    transition: background-color 0.7s ease;
+    background: linear-gradient(to bottom, #fff, #9b9b9b 25%, #1f1f1f 80%);
+}
+
+.section:nth-of-type(even) {
+    background-color: #fff;
+}
+
+.section h5 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: rgb(255, 115, 0);
+    margin-bottom: 1rem;
+}
+
+.section h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(255, 115, 0);
+    margin-bottom: 3rem;
+}
+
+.section p {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.section a {
+    font-size: 1.1rem;
+    color: rgb(255, 115, 0);
+    text-decoration: none;
+}
+
+.section a:hover {
+    text-decoration: underline;
+}
+
+.card-grid{
+    margin-top: 8rem;
+}
+
+.card {
+    height: 95%;
+}
+
+.footer {
+    background-color: #1f1f1f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
