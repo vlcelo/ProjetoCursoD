@@ -15,15 +15,19 @@
 
   <!-- Header -->
   <header class="header">
-    <a href="/pages/index.html" class="logo"><img src="/icons/cursod-black.png"></a>
+    <a href="/pages/index.html" class="logo"><img id="logo-header" src="/icons/cursod-black.png" alt="Logo"></a>
     <nav>
       <a id="cursos" style="color:rgb(255, 115, 0); font-weight:600; cursor:default">Cursos</a>
       <a href="/pages/suporte.html" id="suporte">Suporte</a>
-      <a href="/pages/entrar.html" id="entrar">Entrar</a>
+      <a href="https://github.com/vlcelo" id="entrar" target="_blank">Sobre Nós (Eu)</a>
     </nav>
     <div>
-      <a title="Acessibilidade" onclick="toggleMode()" id="modo"><img src="/icons/modo.svg"></a>
-      <a title="Acessibilidade" onclick="openAcessibilidade()" id="acessibilidade"><img src="/icons/acessibilidade.svg"></a>
+      <a title="Acessibilidade" onclick="toggleMode()" id="modo"><img src="/icons/modo.svg" alt="Modo"></a>
+      <a title="Acessibilidade" onclick="openAcessibilidade()" id="acessibilidade"><img src="/icons/acessibilidade.svg" alt="Acessibilidade"></a>
+      <a href="/pages/entrar.html" title="Perfil" id="perfil" onmouseover="showTooltip(event)" onmouseout="hideTooltip()">
+          <img src="/icons/perfil.svg" alt="Perfil">
+          <span id="tooltip" class="tooltip"></span>
+      </a>
     </div>
   </header>
 

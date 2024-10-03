@@ -37,6 +37,14 @@ body {
     margin-left: 20px;
 }
 
+.dropdown-menu {
+    margin-top: 10px;
+}
+
+.dropdown-menu a {
+    color: rgb(255, 115, 0);
+}
+
 .footer {
     background-color: #1f1f1f;
     color: white;
@@ -53,22 +61,42 @@ body {
     margin-bottom: 20px;
 }
 
-.dark-mode {
+/* Modo Claro */
+body.light-mode {
+    background: #fff;
+    color: #000;
+}
+
+body.light-mode header {
+    background-color: #1f1f1f;
     color: #fff;
+}
 
-    .header {
-        background-color: #fff;
-        color: #1f1f1f;
-    }
+body.light-mode header a {
+    color: #fff;
+}
 
-    .header a {
-        color: #1f1f1f;
-    }
+/* Modo Escuro */
+body.dark-mode {
+    background: #1f1f1f;
+    color: #fff;
+}
 
-    .header a:hover {
-        color: rgb(255, 115, 0);
-        font-weight: 600;
-    }
+body.dark-mode header {
+    background-color: #fff;
+    color: #1f1f1f;
+}
+
+body.dark-mode header a {
+    color: #1f1f1f;
+}
+
+body.dark-mode .section {
+    background: linear-gradient(to top, #fff, #9b9b9b 25%, #1f1f1f 80%);
+}
+
+body.dark-mode .slogan p {
+    color: #fff;
 }
 
 .light-mode {
@@ -95,7 +123,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 10rem;
-    justify-content:unset;
+    justify-content: unset;
     align-items: center;
     height: 50vh;
     text-align: center;
@@ -106,14 +134,14 @@ body {
     margin-bottom: 20px;
 }
 
-.logo-container{
+.logo-container {
     height: 30vh;
 }
 
 .slogan {
     font-size: 2.5rem;
-    color: #333;
 }
+
 
 /* Seções de navegação */
 .section {
@@ -121,7 +149,7 @@ body {
     text-align: center;
     background-color: #1f1f1f;
     margin-top: 10rem;
-    justify-content:unset;
+    justify-content: unset;
     color: #1f1f1f;
     height: 100%;
     transition: background-color 0.7s ease;
@@ -161,7 +189,7 @@ body {
     text-decoration: underline;
 }
 
-.card-grid{
+.card-grid {
     margin-top: 8rem;
 }
 
@@ -169,9 +197,93 @@ body {
     height: 95%;
 }
 
+.login-container {
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+    height: 79vh;
+    /* Usa 100% da altura da viewport */
+    max-width: 100%;
+    /* Ajusta a largura conforme necessário */
+    margin: 0 auto;
+    /* Centraliza horizontalmente */
+    padding: 20px;
+    /* Adiciona espaçamento interno */
+}
+
+#formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza o conteúdo do formulário */
+    align-items: center;
+    text-align: center;
+}
+
+input.form-control {
+    width: 300px;
+    /* Ajuste a largura conforme necessário */
+    max-width: 100%;
+    /* Garante que não ultrapasse a largura do contêiner */
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+.btn-logout {
+    display: none;
+    margin-top: 1rem;
+}
+
+.btn-login {
+    width: 100%;
+}
+
+.options {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.options a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Modal */
+.modal-content {
+    padding: 1rem;
+}
+
 .footer {
     background-color: #1f1f1f;
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+/* Estilo para o tooltip */
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px;
+    display: none;
+    /* Inicialmente oculto */
+    z-index: 1000;
 }

@@ -8,30 +8,138 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/pages/customs/style.css" rel="stylesheet">
-
 </head>
 
 <body class="light-mode">
 
   <!-- Header -->
   <header class="header">
-    <a href="/pages/index.html" class="logo"><img src="/icons/cursod-black.png"></a>
+    <a href="/pages/index.html" class="logo"><img id="logo-header" src="/icons/cursod-black.png"></a>
     <nav>
-      <a href="/pages/cursos.html" id="cursos">Cursos</a>
-      <a id="contato" style="color:rgb(255, 115, 0); font-weight:600; cursor:default">Suporte</a>
-      <a href="/pages/entrar.html" id="entrar">Entrar</a>
+        <a href="/pages/cursos.html" id="cursos">Cursos</a>
+        <a id="suporte" style="color:rgb(255, 115, 0); font-weight:600; cursor:default">Suporte</a>
+        <a href="/pages/entrar.html" id="entrar">Entrar</a>
     </nav>
     <div>
-      <a title="Acessibilidade" onclick="toggleMode()" id="acessibilidade"><img src="/icons/modo.svg"></a>
-      <a title="Acessibilidade" onclick="openAcessibilidade()" id="acessibilidade"><img src="/icons/acessibilidade.svg"></a>
+        <a title="Acessibilidade" onclick="toggleMode()" id="acessibilidade"><img src="/icons/modo.svg"></a>
+        <a title="Acessibilidade" onclick="openAcessibilidade()" id="acessibilidade"><img src="/icons/acessibilidade.svg"></a>
     </div>
-  </header>
+</header>
 
   <!-- Acessibilidade Menu -->
   <div class="acessibilidade-menu d-none" id="acessibilidadeMenu">
     <button class="btn btn-dark" onclick="toggleDaltonismo()">Modo Daltonismo</button>
     <button class="btn btn-dark" onclick="toggleCegos()">Modo Cegos</button>
   </div>
+
+  <!-- Seção de Suporte -->
+  <section class="container my-5">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2>Como Podemos Ajudar?</h2>
+        <p>Nosso time de suporte está aqui para esclarecer qualquer dúvida ou ajudar em qualquer questão. Entre em contato conosco por uma das opções abaixo.</p>
+      </div>
+    </div>
+
+    <div class="row my-5">
+      <!-- Formulário de Contato -->
+      <div class="col-md-6">
+        <h5>Entre em contato pelo formulário</h5>
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Nome Completo</label>
+            <input type="text" class="form-control" id="name" placeholder="Seu nome completo">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Seu email">
+          </div>
+          <div class="mb-3">
+            <label for="assunto" class="form-label">Assunto</label>
+            <input type="text" class="form-control" id="assunto" placeholder="Assunto da mensagem">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="message" rows="6" placeholder="Sua mensagem"></textarea>
+          </div>
+          <button type="submit" class="btn btn-warning">Enviar</button>
+        </form>
+      </div>
+
+      <!-- Informações de Contato -->
+      <div class="col-md-6">
+        <h5>Outras maneiras de contato</h5>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Email:</strong> suporte@cursod.com
+          </li>
+          <li class="list-group-item">
+            <strong>Telefone:</strong> (96) 6666-9999
+          </li>
+          <li class="list-group-item">
+            <strong>WhatsApp:</strong> <a href="https://wa.me/553333333333" class="btn btn-success" target="_blank">Fale Conosco pelo WhatsApp</a>
+          </li>
+          <li class="list-group-item">
+            <strong>Endereço:</strong> Rua Eduardo, 333 - Andes, Chile
+          </li>
+        </ul>
+        <div class="mt-4">
+          <h5>Redes Sociais</h5>
+          <p>Nos siga nas redes sociais para acompanhar as novidades e atualizações:</p>
+          <a href="https://facebook.com" class="btn btn-primary">Facebook</a>
+          <a href="https://instagram.com" class="btn btn-danger">Instagram</a>
+          <a href="https://linkedin.com" class="btn btn-info">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seção de Perguntas Frequentes -->
+    <div class="row my-5">
+      <div class="col-12">
+        <h5>Perguntas Frequentes</h5>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                Como acessar meus cursos após a compra?
+              </button>
+            </h2>
+            <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Após a compra, você pode acessar seus cursos entrando com sua conta e indo para a aba "Meus Cursos".
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                Como posso solicitar reembolso?
+              </button>
+            </h2>
+            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Você pode solicitar reembolso dentro de 7 dias após a compra. Basta enviar um email para suporte@cursod.com explicando o motivo da solicitação.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faq3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                Como faço para alterar meus dados pessoais?
+              </button>
+            </h2>
+            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Para alterar seus dados pessoais, acesse sua conta e vá até as configurações de perfil.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -40,8 +148,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/pages/customs/custom.js"></script>
-
-
 </body>
 
 </html>
