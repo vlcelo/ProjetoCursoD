@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CursoD - Login</title>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/inputmask.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/pages/customs/style.css" rel="stylesheet">
 </head>
@@ -52,7 +53,6 @@
         </div>
         <p class="error-message" id="errorMessage"></p>
         <button type="submit" class="btn btn-dark btn-login">Entrar</button>
-        <button type="button" id="logoutButton" class="btn btn-secondary btn-logout">Logout</button>
       </form>
 
       <div class="options">
@@ -68,68 +68,99 @@
           <h5 id="registerModalLabel">Cadastro</h5>
           <form id="registerForm">
             <div class="mb-3">
-              <label for="registerUsername" class="form-label">Nome:</label>
-              <input type="text" class="form-control" id="nome" placeholder="Digite seu nome..." required>
+              <label for="nome" class="form-label">Nome:</label>
+              <input type="text" class="form-control" id="registerNome" placeholder="Digite seu nome..." required>
             </div>
 
             <div class="mb-3">
-              <label for="registerEmail" class="form-label">Sobrenome:</label>
-              <input type="email" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome..." required>
+              <label for="sobrenome" class="form-label">Sobrenome:</label>
+              <input type="text" class="form-control" id="registerSobrenome" placeholder="Digite seu sobrenome..." required>
             </div>
 
             <div class="mb-3">
-              <label for="registerUsername" class="form-label">Idade:</label>
-              <input type="text" class="form-control" id="idade" placeholder="Digite sua idade..." required>
+              <label for="idade" class="form-label">Idade:</label>
+              <input type="number" class="form-control" id="registerIdade" placeholder="Digite sua idade..." required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="registerEmail" placeholder="Crie seu usuário..." required>
             </div>
 
             <div class="mb-3">
               <label for="registerUsername" class="form-label">Usuário:</label>
-              <input type="text" class="form-control" id="user" placeholder="Crie seu usuário..." required>
+              <input type="text" class="form-control" id="registerUsername" placeholder="Crie seu usuário..." required>
             </div>
 
             <div class="mb-3">
-              <label for="registerPassword" class="form-label">Endereço:</label>
-              <input type="password" class="form-control" id="endereco" placeholder="Digite seu endereço..."
-                required>
+              <label for="endereco" class="form-label">Endereço:</label>
+              <input type="text" class="form-control" id="registerEndereco" placeholder="Digite seu endereço..." required>
             </div>
 
             <div class="mb-3">
-              <label for="registerPassword" class="form-label">CEP:</label>
-              <input type="password" class="form-control" id="cep" placeholder="Digite seu CEP..."
-                required>
+              <label for="cep" class="form-label">CEP:</label>
+              <input type="text" class="form-control" id="registerCep" placeholder="Digite seu CEP (apenas números)..." required maxlength="8" title="Formato esperado: xxxxx-xxx">
             </div>
 
             <div class="mb-3">
-              <label for="registerPassword" class="form-label">País:</label>
-              <input type="password" class="form-control" id="pais" placeholder="Digite seu país..."
-                required>
+              <label for="pais" class="form-label">País:</label>
+              <select class="form-control" id="registerPais" required onchange="updateStates()">
+                <option value="" selected disabled>Selecione o país...</option>
+                <option value="brasil">Brasil</option>
+                <option value="imigrante" disabled>Sou imigrante ilegal (em desenvolvimento)</option>
+              </select>
             </div>
 
             <div class="mb-3">
-              <label for="registerPassword" class="form-label">Estado:</label>
-              <input type="password" class="form-control" id="estado" placeholder="Digite seu estado..."
-                required>
+              <label for="estado" class="form-label">Estado:</label>
+              <select class="form-control" id="registerEstado" required>
+                <option value="" selected disabled>Selecione o estado...</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
             </div>
 
-            <div class="mb-3">
-              <label for="registerPassword" class="form-label">Telefone:</label>
-              <input type="password" class="form-control" id="telefone" placeholder="Digite seu telefone..."
-                required>
-            </div>
+          <div class="mb-3">
+            <label for="telefone" class="form-label">Telefone:</label>
+            <input type="text" class="form-control" id="registerTelefone" placeholder="Digite seu número de telefone (apenas números)..." required maxlength="11" title="Formato esperado: (xx) xxxxx-xxxx">
+          </div>
 
             <div class="mb-3">
               <label for="registerPassword" class="form-label">Senha:</label>
-              <input type="password" class="form-control" id="senha" placeholder="Crie uma senha" required>
+              <input type="password" class="form-control" id="registerPassword" placeholder="Crie uma senha" required>
             </div>
 
-            <button href="/pages/cursos.html" type="submit" class="btn btn-dark">Cadastrar</button>
+            <button type="submit" class="btn btn-dark">Cadastrar</button>
           </form>
         </div>
       </div>
     </div>
   </div>
-
-
 
   <footer class="footer">
     <p>&copy; 2024 CursoD - Todos os direitos reservados</p>

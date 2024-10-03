@@ -37,29 +37,13 @@
     </div>
   </header>
 
-  <!-- Acessibilidade Menu -->
-  <div class="acessibilidade-menu d-none" id="acessibilidadeMenu">
-    <button class="btn btn-dark" onclick="toggleDaltonismo()">Modo Daltonismo</button>
-    <button class="btn btn-dark" onclick="toggleCegos()">Modo Cegos</button>
+  <br>
+  <!-- Filtro de Cursos -->
+  <div class="container">
+    <h2 for="cursos">Encontre o melhor curso para você:</h2>
   </div>
 
-  <!-- Filtros e Pesquisa -->
-  <section class="container my-4">
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <select id="filter" class="form-select" onchange="filterCourses()">
-          <option value="all" selected>Todos os Cursos</option>
-          <option value="defesa">Defesa Pessoal</option>
-          <option value="culinaria">Culinária</option>
-          <option value="arte">Arte</option>
-          <option value="desenvolvimento-pessoal">Desenvolvimento Pessoal</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-        <input type="text" id="search" class="form-control" placeholder="Pesquisar curso..." onkeyup="searchCourses()">
-      </div>
-    </div>
-  </section>
+  <br>
 
   <!-- Lista de Cursos -->
   <section class="container">
@@ -67,83 +51,84 @@
       <!-- Card 1 -->
       <div class="col-md-4 course-card" data-type="defesa">
         <div class="card card-custom">
-          <img src="fruit-martial-arts.jpg" class="card-img-top" alt="Artes Marciais com Frutas">
+          <img src="/icons/frutas.png" class="card-img-top" alt="Artes Marciais com Frutas">
           <div class="card-body">
             <h5 class="card-title">Artes Marciais com Frutas</h5>
             <p class="card-text">Defenda-se com bananas e abacaxis neste curso inovador!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <a href="#" class="btn btn-warning">Em breve</a>
           </div>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="col-md-4 course-card" data-type="culinaria">
+      <div class="col-md-4 course-card" data-type="desenvolvimento-pessoal">
         <div class="card card-custom">
-          <img src="cake-architecture.jpg" class="card-img-top" alt="Arquitetura com Bolo">
+          <img src="/icons/medita.png" class="card-img-top" alt="Meditação através do Barulho">
           <div class="card-body">
-            <h5 class="card-title">Arquitetura com Bolo</h5>
-            <p class="card-text">Aprenda a construir maquetes usando bolos e doces!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Meditação através do Barulho</h5>
+            <p class="card-text">Encontre paz interior em meio a sons estridentes!</p>
+            <a href="#" class="btn btn-warning">Em breve</a>
           </div>
         </div>
       </div>
-
       <!-- Card 3 -->
-      <div class="col-md-4 course-card" data-type="arte">
+      <div class="col-md-4 course-card" data-type="culinaria">
         <div class="card card-custom">
-          <img src="underwater-painting.jpg" class="card-img-top" alt="Pintura Subaquática">
+          <img src="/icons/culinaria.png" class="card-img-top" alt="Culinária com Ingredientes Imaginários">
           <div class="card-body">
-            <h5 class="card-title">Pintura Subaquática</h5>
-            <p class="card-text">Domine a arte de pintar enquanto mergulha!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Culinária com Ingredientes Imaginários</h5>
+            <p class="card-text">Cozinhe usando ingredientes fictícios como "geleia de arco-íris"!</p>
+            <button class="btn btn-dark" data-toggle="modal" data-target="#enrollModal"
+              data-course-name="Culinária com Ingredientes Imaginários" data-course-price="R$ 90,00">Matricular</button>
           </div>
         </div>
       </div>
 
       <!-- Card 4 -->
-      <div class="col-md-4 course-card" data-type="desenvolvimento-pessoal">
+      <div class="col-md-4 course-card" data-type="arte">
         <div class="card card-custom">
-          <img src="nap-master.jpg" class="card-img-top" alt="Mestre em Sonecas">
+          <img src="/icons/arteinvi.png" class="card-img-top" alt="Apreciação de Arte Invisível">
           <div class="card-body">
-            <h5 class="card-title">Mestre em Sonecas</h5>
-            <p class="card-text">Aprimore sua habilidade de cochilar em qualquer lugar!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Apreciação de Arte Invisível</h5>
+            <p class="card-text">Aprenda a valorizar obras que não podem ser vistas!</p>
+            <a href="#" class="btn btn-warning">Em breve</a>
           </div>
         </div>
       </div>
 
       <!-- Card 5 -->
-      <div class="col-md-4 course-card" data-type="defesa">
+      <div class="col-md-4 course-card" data-type="desenvolvimento-pessoal">
         <div class="card card-custom">
-          <img src="umbrella-fencing.jpg" class="card-img-top" alt="Esgrima com Guarda-Chuvas">
+          <img src="/icons/esquiso.png" class="card-img-top"
+            alt="Comunicação Interespécies: Conversando com Móveis">
           <div class="card-body">
-            <h5 class="card-title">Esgrima com Guarda-Chuvas</h5>
-            <p class="card-text">Transforme guarda-chuvas em poderosas armas de defesa!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Comunicação Interespécies: Conversando com Móveis</h5>
+            <p class="card-text">Interprete as energias comunicativas de cadeiras e mesas!</p>
+            <a href="#" class="btn btn-warning">Em breve</a>
           </div>
         </div>
       </div>
 
       <!-- Card 6 -->
-      <div class="col-md-4 course-card" data-type="culinaria">
+      <div class="col-md-4 course-card" data-type="desenvolvimento-pessoal">
         <div class="card card-custom">
-          <img src="microwave-gourmet.jpg" class="card-img-top" alt="Gourmet de Microondas">
+          <img src="/icons/marcenaria.png" class="card-img-top" alt="Marcenaria Subaquática">
           <div class="card-body">
-            <h5 class="card-title">Gourmet de Microondas</h5>
-            <p class="card-text">Transforme qualquer prato simples em gourmet usando apenas o microondas!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Marcenaria Subaquática</h5>
+            <p class="card-text">Domine a arte de esculpir móveis debaixo d'água!</p>
+            <a href="#" class="btn btn-warning">Em breve</a>
           </div>
         </div>
       </div>
 
       <!-- Card 7 -->
-      <div class="col-md-4 course-card" data-type="arte">
+      <div class="col-md-4 course-card" data-type="desenvolvimento-pessoal">
         <div class="card card-custom">
-          <img src="abstract-music.jpg" class="card-img-top" alt="Música Abstrata com Panelas">
+          <img src="/icons/porcastina.png" class="card-img-top" alt="Técnicas Avançadas de Procrastinação">
           <div class="card-body">
-            <h5 class="card-title">Música Abstrata com Panelas</h5>
-            <p class="card-text">Crie composições musicais únicas usando utensílios de cozinha!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Técnicas Avançadas de Procrastinação</h5>
+            <p class="card-text">O guia definitivo para procrastinadores!</p>
+            <a href="#" class="btn btn-danger">Sem vagas</a>
           </div>
         </div>
       </div>
@@ -151,66 +136,61 @@
       <!-- Card 8 -->
       <div class="col-md-4 course-card" data-type="desenvolvimento-pessoal">
         <div class="card card-custom">
-          <img src="how-to-be-invisible.jpg" class="card-img-top" alt="Como Ser Invisível em Reuniões">
+          <img src="/icons/sonhos.png" class="card-img-top"
+            alt="Como Ser um Figurante Profissional em Seus Próprios Sonhos">
           <div class="card-body">
-            <h5 class="card-title">Como Ser Invisível em Reuniões</h5>
-            <p class="card-text">Aprenda técnicas para passar despercebido em qualquer reunião de trabalho!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Como Ser um Figurante Profissional em Seus Próprios Sonhos</h5>
+            <p class="card-text">Aprenda a ser um personagem secundário em suas aventuras oníricas!</p>
+            <a href="#" class="btn btn-danger">Sem vagas</a>
           </div>
         </div>
       </div>
 
       <!-- Card 9 -->
-      <div class="col-md-4 course-card" data-type="defesa">
-        <div class="card card-custom">
-          <img src="pillow-fighting.jpg" class="card-img-top" alt="Lutas com Travesseiros">
-          <div class="card-body">
-            <h5 class="card-title">Lutas com Travesseiros</h5>
-            <p class="card-text">Domine as técnicas de combate com travesseiros em situações extremas!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 10 -->
-      <div class="col-md-4 course-card" data-type="culinaria">
-        <div class="card card-custom">
-          <img src="gourmet-ice.jpg" class="card-img-top" alt="Esculturas Gourmet com Gelo">
-          <div class="card-body">
-            <h5 class="card-title">Esculturas Gourmet com Gelo</h5>
-            <p class="card-text">Aprenda a transformar cubos de gelo em verdadeiras obras de arte comestíveis!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 11 -->
       <div class="col-md-4 course-card" data-type="arte">
         <div class="card card-custom">
-          <img src="finger-painting.jpg" class="card-img-top" alt="Pintura com os Pés">
+          <img src="/icons/lego.png" class="card-img-top" alt="Mestre da Arquitetura com Legos Mentais">
           <div class="card-body">
-            <h5 class="card-title">Pintura com os Pés</h5>
-            <p class="card-text">Explore a arte de pintar utilizando apenas seus pés!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <h5 class="card-title">Mestre da Arquitetura com Legos Mentais</h5>
+            <p class="card-text">Construa edifícios monumentais em sua mente!</p>
+            <a href="#" class="btn btn-danger">Sem vagas</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 12 -->
-      <div class="col-md-4 course-card" data-type="desenvolvimento-pessoal">
-        <div class="card card-custom">
-          <img src="perfect-apologies.jpg" class="card-img-top" alt="Como Pedir Desculpas Perfeitas">
-          <div class="card-body">
-            <h5 class="card-title">Como Pedir Desculpas Perfeitas</h5>
-            <p class="card-text">Domine a arte de pedir desculpas que nunca são recusadas!</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
+  <!-- Modal de Matrícula -->
+  <div class="modal fade" id="enrollModal" tabindex="-1" aria-labelledby="enrollModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="enrollModalLabel">Matrícula em Curso 1000% verdadeira</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="courseInfo"></p>
+          <h3 class="modal-title" id="enrollModalPrice">R$ 200/ano</h3>
+          <label for="paymentMethod">Escolha a forma de pagamento:</label>
+          <select id="paymentMethod" class="form-control">
+            <option value="" selected disabled>Selecione a forma de pagamento...</option>
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="pix">Pix</option>
+            <option value="boleto">Boleto</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="/pages/customs/script.js"></script>
 

@@ -40,40 +40,30 @@ function filterCourses() {
   });
 }
 
-function searchCourses() {
-  const searchValue = document.getElementById('search').value.toLowerCase();
-  const courses = document.querySelectorAll('.course-card');
-
-  courses.forEach(course => {
-    const courseTitle = course.querySelector('.card-title').textContent.toLowerCase();
-    if (courseTitle.includes(searchValue)) {
-      course.style.display = 'block';
-    } else {
-      course.style.display = 'none';
-    }
-  });
-}
-
 // Funções de perfil/login
+const loginForm = document.getElementById("loginForm");
 
-// Cadastro (fictício)
-const registerForm = document.getElementById("registerForm");
-registerForm.addEventListener("submit", function (e) {
+loginForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  const newUser = {
-    username: document.getElementById("registerUsername").value,
-    email: document.getElementById("registerEmail").value,
-    password: document.getElementById("registerPassword").value,
-  };
-  alert("Usuário cadastrado com sucesso! Bem-vindo, " + newUser.username + "! (confia)");
-  registerForm.reset();
-  
-  // Redireciona para a página de cursos após o alerta
-  window.location.href = "/pages/cursos.html";
+
+  const username = document.getElementById("user").value;
+  const password = document.getElementById("senha").value;
+
+  if (username && password) {
+    // Simula login bem-sucedido
+    alert("Login realizado com sucesso! Bem-vindo, " + username + "!");
+
+    // Redireciona para a página de cursos após o login
+    window.location.href = "/pages/cursos.html";
+  } else {
+    // Exibe uma mensagem de erro se os campos estiverem vazios
+    alert("Por favor, preencha os campos de usuário e senha.");
+  }
 });
 
-function esqueciSenhaTroll(){
-  alert("fiquei com preguiça de fazekkkkkk");
+// Função para simular 'Esqueci a senha'
+function esqueciSenhaTroll() {
+  alert("fiquei com preguiça de fazekkkkkkkk");
 }
 
 // Menu dropdown do perfil
@@ -83,7 +73,7 @@ function toggleDropdown() {
 }
 
 // Fechar o dropdown ao clicar fora dele
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (!event.target.matches('#perfilIcon')) {
     const dropdowns = document.getElementsByClassName("dropdown-menu");
     for (let i = 0; i < dropdowns.length; i++) {
@@ -94,3 +84,43 @@ window.onclick = function(event) {
     }
   }
 }
+
+// Adiciona evento para o botão "Matricular"
+  $('#enrollModal').on('show.bs.modal', function (event) {
+    const button = $(event.relatedTarget); // Botão que acionou o modal
+    const courseName = button.data('course-name'); // Extrai o nome do curso do atributo data
+    const coursePrice = button.data('course-price'); // Extrai o preço do curso do atributo data
+
+    const modal = $(this);
+    modal.find('#courseInfo').text(`Você está se matriculando no curso: ${courseName}. O valor é ${coursePrice}.`);
+    modal.find('#enrollModalPrice').text(coursePrice); // Atualiza o preço no modal
+  });
+
+  // Evento para o botão "Confirmar Matrícula"
+  document.getElementById('confirmEnrollmentBtn').addEventListener('click', function() {
+    const selectedPaymentMethod = document.getElementById('paymentMethod').value; // Obtém a forma de pagamento selecionada
+
+    if (selectedPaymentMethod) {
+      // Exibe mensagem de confirmação
+      alert("Matrícula realizada com sucesso!");
+      
+      // Redireciona para a página desejada
+      window.location.href = '/pages/index.html'; // Substitua pelo caminho correto da sua página inicial
+    } else {
+      alert("Por favor, selecione uma forma de pagamento."); // Mensagem caso nenhuma forma de pagamento seja selecionada
+    }
+  });
+
+  document.getElementById('courseType').addEventListener('change', function () {
+    const selectedType = this.value;
+    const courses = document.querySelectorAll('.course-card');
+
+    courses.forEach(course => {
+      // Verifica se o tipo selecionado é "all" ou se o data-type do curso corresponde ao selecionado
+      if (selectedType === 'all' || course.dataset.type === selectedType) {
+        course.style.display = 'block'; // Mostra o card
+      } else {
+        course.style.display = 'none'; // Oculta o card
+      }
+    });
+  });
