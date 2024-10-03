@@ -7,20 +7,24 @@ body {
     overflow-x: hidden;
 }
 
+/* Header container geral */
 .header {
     background-color: #1f1f1f;
     color: white;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    align-items: center; /* Alinha verticalmente no centro */
     font-size: 1.5rem;
 }
 
+/* Links do header */
 .header a {
     color: white;
     margin-right: 20px;
     text-decoration: none;
+    display: flex;
+    align-items: center; /* Garante que os ícones estejam alinhados ao centro */
 }
 
 .header a:hover {
@@ -29,8 +33,22 @@ body {
     cursor: pointer;
 }
 
+/* Estilo da logo */
 .header img {
     max-width: 8rem;
+}
+
+/* Espaçamento entre os ícones e navegação */
+.header nav {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os links */
+}
+
+/* Ícones de modo, acessibilidade, perfil */
+.header div {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os ícones */
 }
 
 .toggle-mode {
@@ -38,7 +56,19 @@ body {
 }
 
 .dropdown-menu {
-    margin-top: 10px;
+    display: none;
+    right: 0;
+    background-color: #1f1f1f;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+    color: white; /* Texto branco para os itens */
+  }
+
+
+.dropdown-menu.show {
+    display: block;
 }
 
 .dropdown-menu a {
@@ -92,7 +122,7 @@ body.dark-mode header a {
 }
 
 body.dark-mode .section {
-    background: linear-gradient(to top, #fff, #9b9b9b 25%, #1f1f1f 80%);
+    background: #fff;
 }
 
 body.dark-mode .slogan p {
@@ -153,7 +183,7 @@ body.dark-mode .slogan p {
     color: #1f1f1f;
     height: 100%;
     transition: background-color 0.7s ease;
-    background: linear-gradient(to bottom, #fff, #9b9b9b 25%, #1f1f1f 80%);
+    background: 1f1f1f;
 }
 
 .section:nth-of-type(even) {
@@ -200,33 +230,24 @@ body.dark-mode .slogan p {
 .login-container {
     display: flex;
     justify-content: center;
-    /* Centraliza horizontalmente */
     align-items: center;
-    /* Centraliza verticalmente */
     height: 79vh;
-    /* Usa 100% da altura da viewport */
     max-width: 100%;
-    /* Ajusta a largura conforme necessário */
     margin: 0 auto;
-    /* Centraliza horizontalmente */
     padding: 20px;
-    /* Adiciona espaçamento interno */
 }
 
 #formulario {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Centraliza o conteúdo do formulário */
     align-items: center;
     text-align: center;
 }
 
 input.form-control {
     width: 300px;
-    /* Ajuste a largura conforme necessário */
     max-width: 100%;
-    /* Garante que não ultrapasse a largura do contêiner */
 }
 
 .login-container h2 {
@@ -256,7 +277,7 @@ input.form-control {
 .options a {
     display: block;
     margin-bottom: 0.5rem;
-    color: #007bff;
+    color: rgb(255, 115, 0);
     text-decoration: none;
 }
 
@@ -267,6 +288,7 @@ input.form-control {
 /* Modal */
 .modal-content {
     padding: 1rem;
+    justify-content: center;
 }
 
 .footer {
@@ -274,16 +296,4 @@ input.form-control {
     color: white;
     text-align: center;
     padding: 20px;
-}
-
-/* Estilo para o tooltip */
-.tooltip {
-    position: absolute;
-    background-color: #333;
-    color: #fff;
-    border-radius: 5px;
-    padding: 5px;
-    display: none;
-    /* Inicialmente oculto */
-    z-index: 1000;
 }

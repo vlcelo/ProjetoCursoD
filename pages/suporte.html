@@ -16,15 +16,25 @@
   <header class="header">
     <a href="/pages/index.html" class="logo"><img id="logo-header" src="/icons/cursod-black.png"></a>
     <nav>
-        <a href="/pages/cursos.html" id="cursos">Cursos</a>
-        <a id="suporte" style="color:rgb(255, 115, 0); font-weight:600; cursor:default">Suporte</a>
-        <a href="/pages/entrar.html" id="entrar">Entrar</a>
+      <a href="/pages/cursos.html" id="cursos">Cursos</a>
+      <a id="suporte" style="color:rgb(255, 115, 0); font-weight:600; cursor:default">Suporte</a>
+      <a href="https://github.com/vlcelo" id="entrar" target="_blank">Sobre Nós (Eu)</a>
     </nav>
     <div>
-        <a title="Acessibilidade" onclick="toggleMode()" id="acessibilidade"><img src="/icons/modo.svg"></a>
-        <a title="Acessibilidade" onclick="openAcessibilidade()" id="acessibilidade"><img src="/icons/acessibilidade.svg"></a>
+      <a title="Modo Claro/Escuro" onclick="toggleMode()" id="modo"><img src="/icons/modo.svg"></a>
+      <!-- Dropdown de perfil -->
+      <div class="dropdown">
+        <a title="Perfil" id="perfilIcon" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img src="/icons/perfil.svg">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilIcon">
+          <li><a class="dropdown-item" href="/pages/entrar.html">Entrar</a></li>
+          <li><a class="dropdown-item" href="/pages/index.html">Sair</a></li>
+        </ul>
+      </div>
     </div>
-</header>
+  </header>
 
   <!-- Acessibilidade Menu -->
   <div class="acessibilidade-menu d-none" id="acessibilidadeMenu">
@@ -37,7 +47,8 @@
     <div class="row">
       <div class="col-12 text-center">
         <h2>Como Podemos Ajudar?</h2>
-        <p>Nosso time de suporte está aqui para esclarecer qualquer dúvida ou ajudar em qualquer questão. Entre em contato conosco por uma das opções abaixo.</p>
+        <p>Nosso time de suporte está aqui para esclarecer qualquer dúvida ou ajudar em qualquer questão. Entre em
+          contato conosco por uma das opções abaixo.</p>
       </div>
     </div>
 
@@ -77,7 +88,8 @@
             <strong>Telefone:</strong> (96) 6666-9999
           </li>
           <li class="list-group-item">
-            <strong>WhatsApp:</strong> <a href="https://wa.me/553333333333" class="btn btn-success" target="_blank">Fale Conosco pelo WhatsApp</a>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/553333333333" class="btn btn-success" target="_blank">Fale
+              Conosco pelo WhatsApp</a>
           </li>
           <li class="list-group-item">
             <strong>Endereço:</strong> Rua Eduardo, 333 - Andes, Chile
@@ -100,11 +112,13 @@
         <div class="accordion" id="faqAccordion">
           <div class="accordion-item">
             <h2 class="accordion-header" id="faq1">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1"
+                aria-expanded="true" aria-controls="faqCollapse1">
                 Como acessar meus cursos após a compra?
               </button>
             </h2>
-            <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+            <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faq1"
+              data-bs-parent="#faqAccordion">
               <div class="accordion-body">
                 Após a compra, você pode acessar seus cursos entrando com sua conta e indo para a aba "Meus Cursos".
               </div>
@@ -113,24 +127,29 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faq2">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
                 Como posso solicitar reembolso?
               </button>
             </h2>
-            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+            <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faq2"
+              data-bs-parent="#faqAccordion">
               <div class="accordion-body">
-                Você pode solicitar reembolso dentro de 7 dias após a compra. Basta enviar um email para suporte@cursod.com explicando o motivo da solicitação.
+                Você pode solicitar reembolso dentro de 7 dias após a compra. Basta enviar um email para
+                suporte@cursod.com explicando o motivo da solicitação.
               </div>
             </div>
           </div>
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faq3">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
                 Como faço para alterar meus dados pessoais?
               </button>
             </h2>
-            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+            <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faq3"
+              data-bs-parent="#faqAccordion">
               <div class="accordion-body">
                 Para alterar seus dados pessoais, acesse sua conta e vá até as configurações de perfil.
               </div>

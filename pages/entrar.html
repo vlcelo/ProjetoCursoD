@@ -18,80 +18,116 @@
     <nav>
       <a href="/pages/cursos.html" id="cursos">Cursos</a>
       <a href="/pages/suporte.html" id="suporte">Suporte</a>
-      <a href="https://github.com/vlcelo" id="sobre" target="_blank">Sobre Nós (Eu)</a>
+      <a href="https://github.com/vlcelo" id="entrar" target="_blank">Sobre Nós (Eu)</a>
     </nav>
     <div>
-      <a title="Acessibilidade" onclick="toggleMode()" id="modo"><img src="/icons/modo.svg"></a>
-      <a title="Acessibilidade" onclick="openAcessibilidade()" id="acessibilidade"><img src="/icons/acessibilidade.svg"></a>
-      <a href="/pages/entrar.html" title="Perfil" id="modo"><img src="/icons/perfil.svg"></a>
+      <a title="Modo Claro/Escuro" onclick="toggleMode()" id="modo"><img src="/icons/modo.svg"></a>
+      <!-- Dropdown de perfil -->
+      <div class="dropdown">
+        <a title="Perfil" id="perfilIcon" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img src="/icons/perfil.svg">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilIcon">
+          <li><a class="dropdown-item" href="/pages/entrar.html">Entrar</a></li>
+          <li><a class="dropdown-item" href="/pages/index.html">Sair</a></li>
+        </ul>
+      </div>
     </div>
   </header>
 
   <div class="login-container">
     <div id="formulario">
-        <h2>Login 100% real</h2>
+      <h2>Login 100% real</h2>
 
-        <!-- Formulário de Login -->
-        <form id="loginForm">
-            <div class="mb-3">
-                <label for="username" class="form-label">Usuário</label>
-                <input type="text" class="form-control" id="username" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="password" required>
-            </div>
-            <p class="error-message" id="errorMessage"></p>
-            <button type="submit" class="btn btn-primary btn-login">Entrar</button>
-            <button type="button" id="logoutButton" class="btn btn-secondary btn-logout">Logout</button>
-        </form>
-
-        <div class="options">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal">Esqueci a senha</a>
-            <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Não tenho cadastro. Cadastrar</a>
+      <!-- Formulário de Login -->
+      <form id="loginForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Usuário:</label>
+          <input type="text" class="form-control" id="user" required>
         </div>
-    </div>
-
-    <!-- Modal Esqueci a Senha -->
-    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <h5 id="forgotPasswordModalLabel">Recuperar Senha</h5>
-                <form id="forgotPasswordForm">
-                    <div class="mb-3">
-                        <label for="forgotEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="forgotEmail" placeholder="Digite seu email" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Enviar</button>
-                </form>
-            </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Senha:</label>
+          <input type="password" class="form-control" id="senha" required>
         </div>
+        <p class="error-message" id="errorMessage"></p>
+        <button type="submit" class="btn btn-dark btn-login">Entrar</button>
+        <button type="button" id="logoutButton" class="btn btn-secondary btn-logout">Logout</button>
+      </form>
+
+      <div class="options">
+        <a href="#" onclick="esqueciSenhaTroll();">Esqueci a senha</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Não tenho cadastro. Cadastrar</a>
+      </div>
     </div>
 
     <!-- Modal Cadastro -->
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <h5 id="registerModalLabel">Cadastro</h5>
-                <form id="registerForm">
-                    <div class="mb-3">
-                        <label for="registerUsername" class="form-label">Usuário</label>
-                        <input type="text" class="form-control" id="registerUsername" placeholder="Crie seu nome de usuário" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="registerEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="registerEmail" placeholder="Digite seu email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="registerPassword" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="registerPassword" placeholder="Crie uma senha" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                </form>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <h5 id="registerModalLabel">Cadastro</h5>
+          <form id="registerForm">
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Nome:</label>
+              <input type="text" class="form-control" id="nome" placeholder="Digite seu nome..." required>
             </div>
+
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label">Sobrenome:</label>
+              <input type="email" class="form-control" id="sobrenome" placeholder="Digite seu sobrenome..." required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Idade:</label>
+              <input type="text" class="form-control" id="idade" placeholder="Digite sua idade..." required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerUsername" class="form-label">Usuário:</label>
+              <input type="text" class="form-control" id="user" placeholder="Crie seu usuário..." required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Endereço:</label>
+              <input type="password" class="form-control" id="endereco" placeholder="Digite seu endereço..."
+                required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">CEP:</label>
+              <input type="password" class="form-control" id="cep" placeholder="Digite seu CEP..."
+                required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">País:</label>
+              <input type="password" class="form-control" id="pais" placeholder="Digite seu país..."
+                required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Estado:</label>
+              <input type="password" class="form-control" id="estado" placeholder="Digite seu estado..."
+                required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Telefone:</label>
+              <input type="password" class="form-control" id="telefone" placeholder="Digite seu telefone..."
+                required>
+            </div>
+
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label">Senha:</label>
+              <input type="password" class="form-control" id="senha" placeholder="Crie uma senha" required>
+            </div>
+
+            <button href="/pages/cursos.html" type="submit" class="btn btn-dark">Cadastrar</button>
+          </form>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 

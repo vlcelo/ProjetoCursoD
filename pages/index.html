@@ -14,17 +14,27 @@
 
     <!-- Header -->
     <header class="header">
-        <a class="logo"><img id="logo-header" src="/icons/cursod-black.png"></a>
+        <a href="/pages/index.html" class="logo"><img id="logo-header" src="/icons/cursod-black.png"></a>
         <nav>
-            <a href="/pages/cursos.html" id="cursos">Cursos</a>
-            <a href="/pages/suporte.html" id="suporte">Suporte</a>
-            <a href="/pages/entrar.html" id="entrar">Entrar</a>
+          <a href="/pages/cursos.html" id="cursos">Cursos</a>
+          <a href="/pages/suporte.html" id="suporte">Suporte</a>
+          <a href="https://github.com/vlcelo" id="entrar" target="_blank">Sobre Nós (Eu)</a>
         </nav>
         <div>
-            <a title="Acessibilidade" onclick="toggleMode()" id="acessibilidade"><img src="/icons/modo.svg"></a>
-            <a title="Acessibilidade" onclick="openAcessibilidade()" id="acessibilidade"><img src="/icons/acessibilidade.svg"></a>
+          <a title="Modo Claro/Escuro" onclick="toggleMode()" id="modo"><img src="/icons/modo.svg"></a>
+          <!-- Dropdown de perfil -->
+          <div class="dropdown">
+            <a title="Perfil" id="perfilIcon" class="dropdown-toggle" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <img src="/icons/perfil.svg">
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="perfilIcon">
+              <li><a class="dropdown-item" href="/pages/entrar.html">Entrar</a></li>
+              <li><a class="dropdown-item" href="/pages/index.html">Sair</a></li>
+            </ul>
+          </div>
         </div>
-    </header>
+      </header>
 
     <!-- Acessibilidade Menu -->
     <div class="acessibilidade-menu d-none" id="acessibilidadeMenu">
